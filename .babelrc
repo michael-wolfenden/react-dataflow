@@ -1,0 +1,30 @@
+{
+  "presets": [
+    // http://babeljs.io/docs/plugins/preset-react/
+    "react",
+    // http://babeljs.io/docs/plugins/preset-es2015/
+    [
+      "es2015",
+      {
+        "modules": false
+      }
+    ],
+    // http://babeljs.io/docs/plugins/preset-stage-2/
+    "stage-2"
+  ],
+  "plugins": [
+    // https://babeljs.io/docs/plugins/transform-runtime/
+    "transform-runtime"
+  ],
+  "env": {
+    "production": {
+      "presets": [
+        "react-optimize"
+      ],
+      "plugins": [
+        // https://www.npmjs.com/package/babel-plugin-transform-remove-console
+        "transform-remove-console"
+      ]
+    }
+  }
+}

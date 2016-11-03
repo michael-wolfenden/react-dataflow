@@ -1,0 +1,66 @@
+{
+  "name": "react-dataflow",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "setup": "yarn install && yarn run validate",
+    "validate": "yarn run lint && yarn run test",
+    "start": "webpack-dev-server --config config/webpack.config.dev.js -d --open --devtool eval-source-map",
+    "production": "cross-env BABEL_ENV=production webpack --config config/webpack.config.prod.js -p --bail --devtool source-map",
+    "lint": "eslint . --ignore-path .gitignore",
+    "test": "jest",
+    "test-watch": "jest --watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "6.5.1",
+    "babel-core": "6.18.0",
+    "babel-eslint": "7.0.0",
+    "babel-loader": "6.2.5",
+    "babel-plugin-transform-remove-console": "6.8.0",
+    "babel-plugin-transform-runtime": "6.15.0",
+    "babel-preset-es2015": "6.18.0",
+    "babel-preset-react": "6.16.0",
+    "babel-preset-react-optimize": "1.0.1",
+    "babel-preset-stage-2": "6.18.0",
+    "clean-webpack-plugin": "0.1.13",
+    "copy-webpack-plugin": "4.0.0",
+    "cross-env": "3.1.3",
+    "css-loader": "0.25.0",
+    "eslint": "3.8.1",
+    "eslint-config-airbnb": "12.0.0",
+    "eslint-import-resolver-webpack": "0.6.0",
+    "eslint-loader": "1.6.0",
+    "eslint-plugin-import": "2.0.1",
+    "eslint-plugin-jsx-a11y": "2.2.3",
+    "eslint-plugin-react": "6.4.1",
+    "extract-text-webpack-plugin": "2.0.0-beta.4",
+    "file-loader": "0.9.0",
+    "html-webpack-plugin": "2.24.0",
+    "jest": "16.0.2",
+    "postcss-loader": "1.0.0",
+    "react-dev-utils": "0.3.0",
+    "redux-logger": "2.7.4",
+    "source-map-url": "0.4.0",
+    "style-loader": "0.13.1",
+    "webpack": "2.1.0-beta.25",
+    "webpack-dev-server": "2.1.0-beta.10"
+  },
+  "dependencies": {
+    "axios": "0.15.2",
+    "babel-runtime": "6.18.0",
+    "react": "15.3.2",
+    "react-dom": "15.3.2",
+    "react-redux": "4.4.5",
+    "redux": "3.6.0",
+    "redux-logic": "0.9.3",
+    "rxjs": "5.0.0-rc.1"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>\\config\\jest\\file-stub.js",
+      "^.+\\.css$": "<rootDir>\\config\\jest\\css-stub.js"
+    }
+  }
+}
